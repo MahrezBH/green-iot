@@ -1,5 +1,5 @@
 /* Begin jQuery */;
-window.onload = function () {
+(function ($) {
 
   $(window).scroll(function (e) {
     if ($(window).scrollTop() >= $("header").height() + 30) {
@@ -26,9 +26,12 @@ window.onload = function () {
       $('nav ul').toggle();
     });
     // Toggle active CSS class (X - close)
-    document.querySelector("#nav-toggle").addEventListener("click", function () {
-      this.classList.toggle("active");
-    });
+    var x = document.querySelector("#nav-toggle");
+    if (x) {
+      x.addEventListener("click", function () {
+        this.classList.toggle("active");
+      });
+    }
     // If a link has a dropdown, add sub menu toggle.
     $('nav ul li > a:not(:only-child)').click(function (e) {
       $(this).siblings('.nav-dropdown').toggle();
@@ -47,7 +50,7 @@ window.onload = function () {
     /* Everything goes inside these two tags */
   });
 
-}
+})(jQuery);
 
 $(document).ready(function () {
   $('.menu-toggle').click(function () {
@@ -65,9 +68,11 @@ window.onclick = function (event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
-    for (i = 0; i < dropdowns.length;) {
+
+    for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
       if (openDropdown.classList.contains('show')) {
+        console.log(49);
         openDropdown.classList.remove('show');
       }
     }
