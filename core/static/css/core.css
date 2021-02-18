@@ -1,0 +1,75 @@
+    header.masthead h1 {
+        font-size: 2rem;
+        color: lawngreen;
+    }
+
+    @media (min-width: 768px) {
+        header.masthead {
+            padding-top: 12rem;
+            padding-bottom: 12rem;
+        }
+
+        header.masthead h1 {
+            font-size: 3rem;
+        }
+    }
+
+    .showcase .showcase-text {
+        padding: 3rem;
+    }
+
+    .showcase .showcase-img {
+        min-height: 30rem;
+        background-size: cover;
+        border-radius: 4%;
+    }
+
+    @media (min-width: 768px) {
+        .showcase .showcase-text {
+            padding: 7rem;
+        }
+    }
+
+    .testimonials {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+
+    .testimonials .testimonial-item {
+        max-width: 18rem;
+    }
+
+    .testimonials .testimonial-item img {
+        max-width: 12rem;
+        box-shadow: 0px 5px 5px 0px #adb5bd;
+    }
+
+    .typewrite {
+        font-family: 'Reggae One', cursive;
+    }
+
+    .oswald {
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .features-icons-item .fas {
+        font-size: 5em;
+    }
+
+    .find {
+        border: 2px solid #fafdfc;
+        min-height: 183px;
+        border-top-left-radius: 135px;
+        border-top-right-radius: 135px;
+        background-color: #1c8264;
+    }
+
+    .find img {
+        height: 80px;
+        width: 80px;
+    }
+
+    .find h1 {
+        text-shadow: 0px 2px 2px indianred;
+        color: azure;
+    }
