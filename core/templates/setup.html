@@ -1,0 +1,152 @@
+{% extends "basic.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .myaccordion {
+        max-width: 80%;
+        margin: 50px auto;
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+    }
+
+    #accordion h1,
+    #accordion h3,
+    .video h3,
+    .video h4 {
+        font-family: 'Oswald', sans-serif;
+        color: darkslategrey;
+        font-weight: 900;
+    }
+
+    #accordion h1 {
+        text-decoration: underline;
+    }
+
+    .myaccordion .card,
+    .myaccordion .card:last-child .card-header {
+        border: none;
+    }
+
+    .myaccordion .card-header {
+        border-bottom-color: #EDEFF0;
+        background: transparent;
+    }
+
+    .myaccordion .fa-stack {
+        font-size: 18px;
+    }
+
+    .myaccordion .btn {
+        width: 100%;
+        font-weight: bold;
+        color: #368c7a;
+        padding: 0;
+    }
+
+    .myaccordion .btn-link:hover,
+    .myaccordion .btn-link:focus {
+        text-decoration: none;
+    }
+
+    .myaccordion li+li {
+        margin-top: 10px;
+    }
+</style>
+<div id="accordion" class="myaccordion">
+    <h1>Set up your Device easly:</h1>
+    <h3>Learn how to set up your device by simple instructions!</h3>
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+                <button class="d-flex align-items-center justify-content-between btn btn-link collapsed"
+                    data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                    Step one: Lorem, ipsum dolor.
+                    <span class="fa-stack fa-sm" style="width: 3em;">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="text-white fa-stack-1x">
+                            1
+                        </i>
+                    </span>
+                </button>
+            </h2>
+        </div>
+        <div id="collapseOne" class="collapse plus-minus-toggle collapsed" aria-labelledby="headingOne"
+            data-parent="#accordion">
+            <div class="card-body">
+                <ul>
+                    <li>Lorem, ipsum.</li>
+                    <li>Lorem, ipsum.</li>
+                    <li>Lorem, ipsum.</li>
+                    <li>Lorem, ipsum.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingTwo">
+            <h2 class="mb-0">
+                <button class="d-flex align-items-center justify-content-between btn btn-link collapsed"
+                    data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Step two: Lorem ipsum dolor sit amet.
+                    <span class="fa-stack fa-sm" style="width: 3em;">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="text-white fa-stack-1x">
+                            2
+                        </i> </span>
+                </button>
+            </h2>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+                <ul>
+                    <li>Lorem, ipsum.</li>
+                    <li>Lorem, ipsum.</li>
+                    <li>Lorem, ipsum.</li>
+                    <li>Lorem, ipsum.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" id="headingThree">
+            <h2 class="mb-0">
+                <button class="d-flex align-items-center justify-content-between btn btn-link collapsed"
+                    data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                    aria-controls="collapseThree">
+                    Step three: Lorem, ipsum.
+                    <span class="fa-stack fa-sm" style="width: 3em;">
+                        <i class="fas fa-circle fa-stack-2x"></i>
+                        <i class="text-white fa-stack-1x">
+                            3
+                        </i> </span>
+                </button>
+            </h2>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+                <ul>
+                    <li>Lorem, ipsum.</li>
+                    <li>Lorem, ipsum.</li>
+                    <li>Lorem, ipsum.</li>
+                    <li>Lorem, ipsum.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=" myaccordion video mt-2 mb-5">
+    <h3>
+        Learn How to set up your device by video!
+    </h3>
+    <div class="row justify-content-center mt-5 mb-5">
+        <div class="col-md-8 col-md-offset-12">
+            <div class="embed-responsive embed-responsive-16by9">
+                <iframe style="border: 5px solid #424e4a;border-radius: 25px;" src="
+                    //player.vimeo.com/video/22428395"></iframe>
+            </div>
+        </div>
+    </div>
+    <h4 class="text-center">
+        That's it ❤️️
+    </h4>
+</div>
+{% endblock %}
