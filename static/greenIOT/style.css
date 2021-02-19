@@ -304,7 +304,7 @@ footer
       width: 40px;
       height: 40px;
       margin: 10px;
-      background: #ccc;
+      /* background: #ccc; */
       float: right;
       cursor: pointer;
       text-align: center;
