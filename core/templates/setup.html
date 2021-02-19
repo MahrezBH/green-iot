@@ -1,56 +1,6 @@
 {% extends "basic.html" %}
 {% load static %}
 {% block content %}
-<style>
-    .myaccordion {
-        max-width: 80%;
-        margin: 50px auto;
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-    }
-
-    #accordion h1,
-    #accordion h3,
-    .video h3,
-    .video h4 {
-        font-family: 'Oswald', sans-serif;
-        color: darkslategrey;
-        font-weight: 900;
-    }
-
-    #accordion h1 {
-        text-decoration: underline;
-    }
-
-    .myaccordion .card,
-    .myaccordion .card:last-child .card-header {
-        border: none;
-    }
-
-    .myaccordion .card-header {
-        border-bottom-color: #EDEFF0;
-        background: transparent;
-    }
-
-    .myaccordion .fa-stack {
-        font-size: 18px;
-    }
-
-    .myaccordion .btn {
-        width: 100%;
-        font-weight: bold;
-        color: #368c7a;
-        padding: 0;
-    }
-
-    .myaccordion .btn-link:hover,
-    .myaccordion .btn-link:focus {
-        text-decoration: none;
-    }
-
-    .myaccordion li+li {
-        margin-top: 10px;
-    }
-</style>
 <div id="accordion" class="myaccordion">
     <h1>Set up your Device easly:</h1>
     <h3>Learn how to set up your device by simple instructions!</h3>
