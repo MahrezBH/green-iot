@@ -1,66 +1,7 @@
 {% extends "basic.html" %}
 {% load static %}
-
 {% block content %}
-
-<script>
-    var TxtType = function (el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
-
-    TxtType.prototype.tick = function () {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
-
-        if (this.isDeleting) {
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
-
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-            delta = this.period;
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            this.loopNum++;
-            delta = 500;
-        }
-
-        setTimeout(function () {
-            that.tick();
-        }, delta);
-    };
-
-    window.onload = function () {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i = 0; i < elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-                new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-        document.body.appendChild(css);
-    };
-</script>
+<script src="{% static 'js/core.js' %}"></script>
 <header class="masthead text-white text-center mt-5" style="background-image:url('{% static "/img/images/bg.jpg" %}')">
     <div class="container">
         <div class="row">
@@ -116,10 +57,11 @@
             <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                 <h2>Keep in touch with your family</h2>
                 <p class="lead mb-0">Have a talkie device your little loves? We'll get it back up and running :)</p>
-                <button type="button" class="btn btn-info">Get started</button> <!-- Ideally we'd link these to seperate guides -->
+                <button type="button" class="btn btn-info">Get started</button>
+                <!-- Ideally we'd link these to seperate guides -->
             </div>
         </div>
-<!--
+        <!-- 
         <div class="row no-gutters">
             <div class="col-lg-6 text-white showcase-img"
                 style="background-image: url('https://i.picsum.photos/id/1022/6000/3376.jpg?hmac=FBA9Qbec8NfDlxj8xLhV9k3DQEKEc-3zxkQM-hmfcy0');">
@@ -131,16 +73,17 @@
                 <button type="button" class="btn btn-info">Get started</button>
 
             </div>
-        </div>
--->
+        </div> -->
+
         <div class="row no-gutters">
-            <div class="col-lg-6 order-lg-2 text-white showcase-img"
+            <div class="col-lg-6  text-white showcase-img"
                 style="background-image: url('https://i.picsum.photos/id/1025/4951/3301.jpg?hmac=_aGh5AtoOChip_iaMo8ZvvytfEojcgqbCH7dzaz-H8Y');">
             </div>
             <div class="col-lg-6 order-lg-1 my-auto showcase-text">
                 <h2>Keep your pets fed!</h2>
                 <p class="lead mb-0">Have a petnet smart feeder? Keep your service running with us.</p>
-                <button type="button" class="btn btn-info">Get started</button> <!-- Ideally we'd link these to seperate guides -->
+                <button type="button" class="btn btn-info">Get started</button>
+                <!-- Ideally we'd link these to seperate guides -->
 
             </div>
         </div>
@@ -166,6 +109,4 @@
         </div>
     </div>
 </section>
-
-
 {% endblock %}
