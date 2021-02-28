@@ -6,6 +6,6 @@ admin.site.index_title = 'GreenIOT'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
-    path('accountss/', include('customer.urls')),
+    path('customer/', include('customer.urls')),
     path('accounts/', include("allauth.urls")),
 ]

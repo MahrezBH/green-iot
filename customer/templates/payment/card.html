@@ -1,0 +1,29 @@
+{% extends "basic.html" %}
+{% load static %}
+{% block content %}
+<script src="https://js.stripe.com/v3/"></script>
+<script src="{% static 'js/card.js' %}"></script>
+<script>
+    card('{{STRIPE_PUBLISHABLE_KEY}}', '{{customer_email}}');
+</script>
+<div class="row py-3 mt-4 ">
+    <div class="col-lg-8 col-md-8">
+        <div class="container">
+            <form action="{% url 'payment_result' %}" method="post" id="payment-form">
+
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="card-element">Credit or debit card</label>
+                    <div id="card-element" class="form-control">
+                    </div>
+                </div>
+                <div id="card-errors" role="alert"></div>
+                <input type="hidden" name="payment_intent_id" value="{{ payment_intent_id }}">
+                <input type="hidden" name="stripe_plan_id" value="{{ stripe_plan_id }}">
+                <input type="hidden" name="automatic" value="{{ automatic }}">
+                <button class="btn btn-success mb-2" id="submit-button">Pay</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

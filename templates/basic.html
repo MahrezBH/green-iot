@@ -35,7 +35,7 @@
                             <li><a onclick="myFunction()" class="btn dropbtn"> <i class="fas fa-user-circle"> </i>
                                     {{request.user}}</a></li>
                             <div id="myDropdown" class="dropdown-content">
-                                <!-- <a href=""><i class="fas fa-user-cog"> </i> Profile </a> -->
+                                <a href="{% url 'upgrade' %}"><i class="fas fa-user-cog"> </i> Upgrade </a>
                                 <a href="{% url 'account_change_password' %}"><i class="fas fa-unlock-alt"> </i> Change
                                     Password</a>
                                 <a href="{% url 'account_logout' %}"><i class="fas fa-sign-out-alt"> </i> Logout</a>
