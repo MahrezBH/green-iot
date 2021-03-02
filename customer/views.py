@@ -73,7 +73,7 @@ def payment_result(request):
         try:
             result = stripe.PaymentIntent.confirm(latest_invoice.payment_intent)
         except:
-            pass
+            # pass
         # if result.status == 'requires_action':
             pi = stripe.PaymentIntent.retrieve(latest_invoice.payment_intent)
             context = {}
