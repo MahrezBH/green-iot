@@ -70,11 +70,8 @@ def payment_result(request):
             ]
         )
         latest_invoice = stripe.Invoice.retrieve(stripe_subscription.latest_invoice)
-        try:
-            result = stripe.PaymentIntent.confirm(latest_invoice.payment_intent)
-        except:
-            # pass
-        # if result.status == 'requires_action':
+        result = stripe.PaymentIntent.confirm(latest_invoice.payment_intent)
+        if result.status == 'requires_action':
             pi = stripe.PaymentIntent.retrieve(latest_invoice.payment_intent)
             context = {}
             context['payment_intent_secret'] = pi.client_secret
