@@ -70,7 +70,7 @@ def payment_result(request):
             ]
         )
         latest_invoice = stripe.Invoice.retrieve(stripe_subscription.latest_invoice)
-        result = stripe.PaymentIntent.confirm(latest_invoice.payment_intent)
+        result = stripe.PaymentIntent.confirm(latest_invoice.payment_intent, payment_method=payment_method_id)
         if result.status == 'requires_action':
             pi = stripe.PaymentIntent.retrieve(latest_invoice.payment_intent)
             context = {}
