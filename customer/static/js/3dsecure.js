@@ -5,8 +5,12 @@ function _3dsecure(stripe_publishable_key, pi_secret) {
             if (result.error) {
                 $('3ds_result').text("Error :/");
                 $('3ds_result').addClass("text-danger")
+
             }
             else {
+                setTimeout(function () {
+                    window.location.href = "/";
+                }, 1);
                 $('3ds_result').text("Thanks for your payment :)");
                 $('3ds_result').addClass("text-success")
             }

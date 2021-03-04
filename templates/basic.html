@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css"
         media="all" />
     <link rel="stylesheet" href="{% static 'css/core.css' %}">
+    <link rel="stylesheet" href="{% static 'css/customer.css' %}">
 </head>
 
 <body>
@@ -37,6 +38,11 @@
                             <div id="myDropdown" class="dropdown-content">
                                 {% if not user.is_paid %}
                                 <a href="{% url 'upgrade' %}"><i class="fas fa-user-cog"> </i> Upgrade </a>
+                                {% else %}
+                                <a href="{% url 'upgrade' %}" style="background-color: darkkhaki;"><i
+                                        class="fas fa-user-cog"> </i> Pro
+                                    account
+                                </a>
                                 {% endif %}
                                 <a href="{% url 'account_change_password' %}"><i class="fas fa-unlock-alt"> </i> Change
                                     Password</a>

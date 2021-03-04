@@ -6,7 +6,7 @@
 <script>
     card('{{STRIPE_PUBLISHABLE_KEY}}', '{{customer_email}}');
 </script>
-<div class="row py-3 mt-4 ">
+<div class="row py-3 mt-4 oswald">
     <div class="col-lg-8 col-md-8">
         <div class="container">
             <form action="{% url 'payment_result' %}" method="post" id="payment-form">
@@ -20,8 +20,7 @@
                 <div id="card-errors" role="alert"></div>
                 <input type="hidden" name="payment_intent_id" value="{{ payment_intent_id }}">
                 <input type="hidden" name="stripe_plan_id" value="{{ stripe_plan_id }}">
-                <input type="hidden" name="automatic" value="{{ automatic }}">
-                <button class="btn btn-success mb-2" id="submit-button">Pay</button>
+                <button class="btn btn-success mb-2" id="submit-button">Start Subscription</button>
             </form>
         </div>
     </div>

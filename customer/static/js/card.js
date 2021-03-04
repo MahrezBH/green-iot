@@ -1,7 +1,5 @@
 function card(stripe_publishable_key, customer_email) {
     document.addEventListener('DOMContentLoaded', function (event) {
-        console.log(1);
-
         var stripe = Stripe(stripe_publishable_key);
         var elements = stripe.elements();
         var style = {

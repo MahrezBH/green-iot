@@ -2,29 +2,37 @@
 {% load static %}
 {% block content %}
 <div class="row py-3 mt-5">
-    <div class="col-lg-6 col-md-6">
+    <div class="col-lg-8 col-md-8 oswald">
         <div class="container">
-            <h3>Upgrade to PRO</h3>
+            {% if paid %}
+            <h2>Hi, <span class="username"> {{user.username}} </span>
+            </h2>
+            <h4>Thanks for Lorem, ipsum dolor.</h4>
+            <h4>Your subscription is valid until the {{user.paid_until}}</h4>
+            {% else %}
+            <h1 style="text-decoration: underline;">Plans and Pricing</h1>
+            <h4>GreenIOT offers Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eum consequuntur
+                perferendis soluta voluptas facilis vero accusantium id recusandae eius, asperiores explicabo illo
+                adipisci, eaque blanditiis vitae error? Animi, ipsam!</h4>
+            <ul>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem, ipsum.</li>
+                <li>Lorem, ipsum.</li>
+            </ul>
+            <h2 style="text-decoration: underline;">Upgrade your account:</h2>
             <form method="POST" action="{% url 'stripe_payment' %}">
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">Plan</label>
                     <select class="form-control" id="exampleFormControlSelect1" name="plan">
-                        <option value="m" default>$1 (monthly)</option>
-                        <option value="a">$10 (annual)</option>
+                        <option value="m" default>$1 (Monthly)</option>
+                        <option value="a">$10 (Annually)</option>
                     </select>
-                </div>
-
-                <div class="form-group">
-                    <input type="checkbox" name="automatic" checked />
-                    <label for="automatic">Automatic renewal</label>
-                    <small class="form-text text-muted">
-                        Will charge automatically during next billing cycle
-                    </small>
                 </div>
                 <button type="submit" class="btn btn-success mb-2">Continue</button>
             </form>
-
+            {% endif %}
         </div>
     </div>
 </div>

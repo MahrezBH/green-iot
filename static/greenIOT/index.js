@@ -72,7 +72,6 @@ window.onclick = function (event) {
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
       if (openDropdown.classList.contains('show')) {
-        console.log(49);
         openDropdown.classList.remove('show');
       }
     }

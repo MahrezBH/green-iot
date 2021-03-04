@@ -53,10 +53,13 @@
     display: block;
     margin: 10px 0;
     padding: 15px 20px;
-    text-decoration: none;
+    text-decoration: none !important;
     color: #262626;
   }
+  #myDropdown a{
+      text-decoration: none !important;
 
+  }
   nav ul li a.active,
   .dropdown-content a,
   nav ul li a:hover
@@ -294,6 +297,7 @@ footer
         border-radius: 3%;
         margin-bottom: 4%;
     }
+  
 /* Media */
 
   @media(max-width: 768px)
