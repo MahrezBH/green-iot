@@ -35,10 +35,13 @@ function card(stripe_publishable_key, customer_email) {
             event.preventDefault();
             stripe.createToken(card).then(function (result) {
                 if (result.error) {
+                    console.log(result.error.message);
                     var error_display = document.getElementById('card-errors');
                     error_display.textContent = result.error.message;
                 }
                 else {
+                    console.log(43);
+                    console.log(result);
                     stripe.createPaymentMethod({
                         type: 'card',
                         card: card,

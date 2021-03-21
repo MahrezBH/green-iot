@@ -9,6 +9,11 @@
             </h2>
             <h4>Thanks for Lorem, ipsum dolor.</h4>
             <h4>Your subscription is valid until the {{user.paid_until}}</h4>
+            <h5>Your plan type: <span class="username">{{current_plan}} </span></h5>
+            <h6><a href="{% url 'change_subscription'%}">change to {{plan}} plan</a>
+                <br><br>
+                Feel free to contact us if you have any question!
+            </h6>
             {% else %}
             <h1 style="text-decoration: underline;">Plans and Pricing</h1>
             <h4>GreenIOT offers Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio eum consequuntur

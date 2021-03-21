@@ -5,6 +5,7 @@ from django.urls import reverse
 import uuid
 import datetime
 from django.utils.translation import ugettext_lazy as _
+from datetime import date
 
 class User(AbstractUser):
     name = CharField(max_length=255)
@@ -12,7 +13,9 @@ class User(AbstractUser):
     role = CharField(max_length=256)
     email = models.EmailField(_('email address'), unique=True)
     paid_until = models.DateField(null=True, blank=True)
-    
+    stripe_customer = CharField(max_length=160,default=None,null=True,blank=True)
+    stripe_subscription = CharField(max_length=160,default=None,null=True,blank=True)
+    plan =  CharField(max_length=160,default=None,null=True,blank=True)
     def delete_user(self):
         return reverse("staff:delete-user", args=[self.uuid])
     
